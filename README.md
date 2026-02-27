@@ -108,7 +108,7 @@ To systematically organize the diverse research and practical resources in the f
 
 ## 🔔 Recent hot research and news
 
-+ 2026-02-26 - 🎉 Updated 16 papers, including 13 on methods, 1 on benchmarks, and 2 on systems and models
++ 2026-02-26 - 🎉 Updated 14 papers, including 14 on methods
 + 2026-02-14 - 🎉 Updated 15 papers, including 1 on survey, 12 on methods, 1 on benchmarks, and 1 on systems and models
 + 2026-02-09 - 🎉 Updated 15 papers
 + 2026-02-01 - 🎉 Updated 16 papers, including 9 on methods, 4 on benchmarks, and 3 on systems and models
@@ -4228,44 +4228,6 @@ Papers below are ordered by **publication date**:
       <td><strong>Paper & Summary</strong></td>
       <td><strong>Tags</strong></td>
       <td><strong>Links</strong></td>
-    </tr>
-    <tr>
-      <td rowspan="2" style="width: 15%;">2026-02-24</td>
-      <td style="width: 55%;"><strong>Untied Ulysses: Memory-Efficient Context Parallelism via Headwise Chunking</strong></td>
-      <td style="width: 15%;">
-      <img src="https://img.shields.io/badge/System-darkblue" alt="System">
-      <img src="https://img.shields.io/badge/Parallel%20Process-red" alt="Parallel Process">
-      <img src="https://img.shields.io/badge/Model%20Architecture-indigo" alt="Model Architecture">
-      </td>
-      <td style="width: 15%;"><a href="https://arxiv.org/pdf/2602.21196.pdf">
-      <img src="https://img.shields.io/badge/arXiv-Paper-%23D2691E?logo=arxiv" alt="Paper Badge">
-      </a></td>
-    </tr>
-    <tr>
-        <td colspan="3">
-        • UPipe introduced in this paper is a novel context-parallel processing technique that effectively improves memory efficiency for long-sequence training.<br>
-        • By performing fine-grained chunking at the attention-head level, UPipe overcomes the memory bottlenecks of traditional Transformer models when handling long sequences. It supports context lengths of up to 5 million tokens while maintaining competitive training speed.<br>
-        • The design philosophy of UPipe is to process only a subset of attention heads to enhance GPU compute utilization. When training the Llama3-8B model, it achieves up to an 87.5% reduction in memory usage, making it a powerful tool for training large-scale language models.
-        </td>
-    </tr>
-    <tr>
-      <td rowspan="2" style="width: 15%;">2026-02-24</td>
-      <td style="width: 55%;"><strong>TOM: A Ternary Read-only Memory Accelerator for LLM-powered Edge Intelligence</strong></td>
-      <td style="width: 15%;">
-      <img src="https://img.shields.io/badge/System-darkblue" alt="System">
-      <img src="https://img.shields.io/badge/Parallel%20Process-red" alt="Parallel Process">
-      <img src="https://img.shields.io/badge/Model%20Architecture-indigo" alt="Model Architecture">
-      </td>
-      <td style="width: 15%;"><a href="https://arxiv.org/pdf/2602.20662.pdf">
-      <img src="https://img.shields.io/badge/arXiv-Paper-%23D2691E?logo=arxiv" alt="Paper Badge">
-      </a></td>
-    </tr>
-    <tr>
-        <td colspan="3">
-        • This paper introduces TOM (Ternary-Oriented Accelerator), a novel hybrid ROM-SRAM accelerator designed to address the memory and bandwidth bottlenecks faced by large language models (LLMs) when deployed on edge devices.<br>
-        • By adopting innovations such as ternary quantization, a sparsity-aware ROM architecture, a distributed processing architecture, and dynamic power management, TOM significantly improves inference speed and energy efficiency.<br>
-        • In real-world evaluations, TOM demonstrates inference throughput of up to 3306 TPS, with energy efficiency far surpassing that of traditional GPUs, highlighting its strong potential for real-time AI applications.
-        </td>
     </tr>
     <tr>
       <td rowspan="2" style="width: 15%;">2026-02-07</td>

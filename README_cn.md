@@ -11,7 +11,7 @@
 [![Awesome](https://awesome.re/badge.svg)](https://github.com/IAAR-Shanghai/Awesome-AI-Memory) 
 [![License: MIT](https://img.shields.io/badge/License-MIT-green.svg)](https://opensource.org/licenses/MIT)
 ![](https://img.shields.io/badge/PRs-Welcome-red)
-[![Papers](https://img.shields.io/badge/Papers-237-blue.svg)](https://github.com/IAAR-Shanghai/Awesome-AI-Memory/papers)
+[![Papers](https://img.shields.io/badge/Papers-235-blue.svg)](https://github.com/IAAR-Shanghai/Awesome-AI-Memory/papers)
 [![Open Source Projects](https://img.shields.io/badge/Open%20Source%20Projects-84-green.svg)](https://github.com/IAAR-Shanghai/Awesome-AI-Memory/projects)
 
 
@@ -107,7 +107,7 @@ To systematically organize the diverse research and practical resources in the f
 
 ## 🔔 近期热点研究与新闻
 
-+ 2026-02-26 - 🎉 更新16篇论文，方法类13篇，benchmark类1篇，系统与模型类2篇
++ 2026-02-26 - 🎉 更新14篇论文，方法类14篇
 + 2026-02-14 - 🎉 更新15篇论文，综述类1篇，方法类12篇，benchmark类1篇，系统与模型类1篇
 + 2026-02-09 - 🎉 更新15篇论文
 + 2026-02-01 - 🎉 更新16篇论文，方法类9篇，benchmark类4篇，系统与模型类3篇
@@ -4213,44 +4213,6 @@ Framework for Experience-Driven Agent Evolution</strong></td>
       <td><strong>论文与摘要</strong></td>
       <td><strong>标签</strong></td>
       <td><strong>链接</strong></td>
-    </tr>
-    <tr>
-      <td rowspan="2" style="width: 15%;">2026-02-24</td>
-      <td style="width: 55%;"><strong>Untied Ulysses: Memory-Efficient Context Parallelism via Headwise Chunking</strong></td>
-      <td style="width: 15%;">
-      <img src="https://img.shields.io/badge/System-darkblue" alt="System">
-      <img src="https://img.shields.io/badge/Parallel%20Process-red" alt="Parallel Process">
-      <img src="https://img.shields.io/badge/Model%20Architecture-indigo" alt="Model Architecture">
-      </td>
-      <td style="width: 15%;"><a href="https://arxiv.org/pdf/2602.21196.pdf">
-      <img src="https://img.shields.io/badge/arXiv-Paper-%23D2691E?logo=arxiv" alt="Paper Badge">
-      </a></td>
-    </tr>
-    <tr>
-        <td colspan="3">
-        • 本文介绍的UPipe是一种新型上下文并行处理技术，有效提高长序列训练的内存效率。<br>
-        • UPipe通过在注意力头级别进行细粒度分块，克服传统Transformer模型在处理长序列时的内存瓶颈，支持高达500万tokens的上下文长度，同时保持竞争力的训练速度。<br>
-        • UPipe的设计理念是只处理部分头部以增强GPU计算的利用率，且在训练Llama3-8B模型时，实现了内存使用最多减少87.5%，成为训练大规模语言模型的有力工具。
-        </td>
-    </tr>
-    <tr>
-      <td rowspan="2" style="width: 15%;">2026-02-24</td>
-      <td style="width: 55%;"><strong>TOM: A Ternary Read-only Memory Accelerator for LLM-powered Edge Intelligence</strong></td>
-      <td style="width: 15%;">
-      <img src="https://img.shields.io/badge/System-darkblue" alt="System">
-      <img src="https://img.shields.io/badge/Parallel%20Process-red" alt="Parallel Process">
-      <img src="https://img.shields.io/badge/Model%20Architecture-indigo" alt="Model Architecture">
-      </td>
-      <td style="width: 15%;"><a href="https://arxiv.org/pdf/2602.20662.pdf">
-      <img src="https://img.shields.io/badge/arXiv-Paper-%23D2691E?logo=arxiv" alt="Paper Badge">
-      </a></td>
-    </tr>
-    <tr>
-        <td colspan="3">
-        • 本文介绍了TOM（Ternary-Oriented Accelerator），一种新型的混合ROM-SRAM加速器，旨在解决大型语言模型（LLM）在边缘设备部署时面临的内存和带宽瓶颈。<br>
-        • TOM通过采用三元量化、稀疏感知ROM架构、分布式处理架构和动态功耗管理等创新，显著提升了模型推理的速度和能效。<br>
-        • TOM在实际测试中展现出高达3306 TPS的推理能力，能效大幅优于传统GPU，指出其在实时AI应用中的巨大潜力。
-        </td>
     </tr>
     <tr>
       <td rowspan="2" style="width: 15%;">2026-02-07</td>
