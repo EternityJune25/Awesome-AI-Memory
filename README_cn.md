@@ -518,6 +518,266 @@ To systematically organize the diverse research and practical resources in the f
       <td><strong>链接</strong></td>
     </tr>
       <tr>
+        <td rowspan="2" style="width: 15%;">2026-03-11</td>
+        <td style="width: 55%;"><strong>Governing Evolving Memory in LLM Agents: Risks, Mechanisms, and the Stability and Safety Governed Memory (SSGM) Framework</strong></td>
+        <td style="width: 15%;">
+          <img src="https://img.shields.io/badge/safety-red" alt="safety">
+          <img src="https://img.shields.io/badge/Evolution-brightgreen" alt="Evolution">
+        </td>
+        <td style="width: 15%;"><a href="https://arxiv.org/pdf/2603.11768v1">
+          <img src="https://img.shields.io/badge/arXiv-Paper-%23D2691E?logo=arxiv" alt="Paper Badge">
+        </a></td>
+      </tr>
+      <tr>
+          <td colspan="3">
+              • 大模型智能体的记忆系统正从静态检索转向动态自主更新，这虽然提升了智能体的适应性，但也引发了严峻的稳定与安全问题。其中包括语义漂移、固化错误工作流的程序漂移、外部恶意注入的记忆投毒。<br>
+              • 提出稳定与安全治理记忆（SSGM）框架。该框架的核心设计理念是将智能体的“生成式认知策略”与“底层记忆存储介质”彻底解耦。它在两者之间引入了一个主动拦截的治理中间件，使记忆的更新不再是盲目的直接写入，而是必须经过多重网关的审查。<br>
+              • 合并前验证，在写入前进行逻辑一致性检查，拒绝与核心事实相矛盾的更新，防止幻觉被固化
+              。时间与权限过滤，在读取时结合衰减函数过滤过期失效数据，并基于访问控制防止跨用户隐私泄露。可逆的定期对齐，采用“可变活动图+ 不可变情景日志”的双轨存储结构，系统会定期将当前记忆与不可变日志进行对齐与错误回滚，从而在数学上为长期的“语义漂移”设定了严格的误差上限。
+          </td>
+      </tr>
+      <tr>
+        <td rowspan="2" style="width: 15%;">2026-03-11</td>
+        <td style="width: 55%;"><strong>Taming OpenClaw: Security Analysis and Mitigation of Autonomous LLM Agent Threats</strong></td>
+        <td style="width: 15%;">
+          <img src="https://img.shields.io/badge/safety-orange" alt="safety">
+          <img src="https://img.shields.io/badge/Openclaw-red" alt="openclaw">
+        </td>
+        <td style="width: 15%;"><a href="https://arxiv.org/pdf/2603.11619v1">
+          <img src="https://img.shields.io/badge/arXiv-Paper-%23D2691E?logo=arxiv" alt="Paper Badge">
+        </a></td>
+      </tr>
+      <tr>
+          <td colspan="3">
+              • 文章针对OpenClaw等自主大语言模型智能体，系统性地分析了其在初始化、输入、推理、决策和执行五个生命周期阶段的安全威胁。<br>
+              • 在OpenClaw上进行了详细的案例研究，证明了这些威胁的破坏力。例如，攻击者可以通过“记忆投毒”将瞬时的恶意输入转化为长期的行为控制；而在决策和执行阶段，模糊的指令可能引发“意图漂移”，使智能体将简单的安全检查任务升级为破坏性的系统防火墙修改和高危命令执行。<br>
+              • 缓解策略包括：初始化阶段的插件验证与签名、输入阶段的语义防火墙隔离、推理阶段的动态记忆完整性校验与状态回滚、决策阶段的意图一致性验证，以及执行阶段的内核级沙箱与最小权限控制。
+          </td>
+      </tr>
+      <tr>
+        <td rowspan="2" style="width: 15%;">2026-03-12</td>
+        <td style="width: 55%;"><strong>Empowering Vision-Language-Action Model with
+Memory via Dual-Level Recurrent Queries</strong></td>
+        <td style="width: 15%;">
+          <img src="https://img.shields.io/badge/Dual--Level--Recurrent--Memory-indigo" alt="Recurrent-Memory">
+          <img src="https://img.shields.io/badge/Past--Prediction-indigo" alt="Past Observation Prediction">
+          <img src="https://img.shields.io/badge/Multi-Modal-yellow" alt="Multi-Modal">
+        </td>
+        <td style="width: 15%;"><a href="https://arxiv.org/pdf/2603.12942">
+          <img src="https://img.shields.io/badge/arXiv-Paper-%23D2691E?logo=arxiv" alt="Paper Badge">
+        </a></td>
+      </tr>
+      <tr>
+          <td colspan="3">
+              • ReMem-VLA 引入了两套可学习的循环记忆查询：帧级查询逐帧更新以捕捉短期记忆，而块级查询则在更长的时间跨度上更新，用于稳定维持长期记忆。<br>
+              • 增加了一个视觉预测头，引入了过去观察预测作为辅助训练目标，强制模型通过重建历史 RGB 图像来召回视觉细节。针对变长序列循环训练的批处理难题，提出了一种基于槽的流式训练范式，能够在保证时间连续性的同时避免跨任务片段的状态泄露。<br>
+              • 为了克服传统沿时间截断反向传播在长序列优化上的瓶颈，模型创造性地采用了冻结 VLM 加固定指数移动平均的无梯度循环更新路径，使得查询只需学习“提取什么任务相关信息”，而无需学习“如何传递”。
+          </td>
+      </tr>
+      <tr>
+        <td rowspan="2" style="width: 15%;">2026-03-11</td>
+        <td style="width: 55%;"><strong>Think While Watching: Online Streaming Segment-Level Memory for Multi-Turn Video Reasoning in Multimodal Large Language Models</strong></td>
+        <td style="width: 15%;">
+          <img src="https://img.shields.io/badge/Multi-turn-indigo" alt="Multi-turn">
+          <img src="https://img.shields.io/badge/Multi-Modal-yellow" alt="Multi-Modal">
+        </td>
+        <td style="width: 15%;"><a href="https://arxiv.org/pdf/2603.11896">
+          <img src="https://img.shields.io/badge/arXiv-Paper-%23D2691E?logo=arxiv" alt="Paper Badge">
+        </a></td>
+      </tr>
+      <tr>
+          <td colspan="3">
+              • 现有的流式多模态大模型通常采用“感知与生成交替”的串行模式，这导致文本解码会阻塞视频的持续摄入，并且随着长视频的推进，模型极易遗忘早期的关键信息。为此，本文提出了一种“边看边思考”的全新流式推理框架。<br>
+              • 该框架将视频划分为多个片段，并在系统运行中在线动态生成并维护持久的片段级记忆笔记，以隐式检索的方式支持多轮问答。<br>
+              • 构建了专门的三阶段流式思维链（CoT）数据集（涵盖单轮适应、多轮交互和长程能力训练），并配合片段级的流式因果掩码（Causal mask）以保证严格的时间因果性。
+          </td>
+      </tr>
+      <tr>
+        <td rowspan="2" style="width: 15%;">2026-03-09</td>
+        <td style="width: 55%;"><strong>MEMO: Memory-Augmented Model Context Optimization for Robust Multi-Turn Multi-Agent LLM Games</strong></td>
+        <td style="width: 15%;">
+          <img src="https://img.shields.io/badge/Multi-turn-indigo" alt="Multi-turn">
+          <<img src="https://img.shields.io/badge/Multi-Agent-orange" alt="Multi-Agent">
+          <img src="https://img.shields.io/badge/Context%20Mgmt-blue" alt="Context-Optimization">
+        </td>
+        <td style="width: 15%;"><a href="https://arxiv.org/pdf/2603.09022">
+          <img src="https://img.shields.io/badge/arXiv-Paper-%23D2691E?logo=arxiv" alt="Paper Badge">
+        </a></td>
+      </tr>
+      <tr>
+          <td colspan="3">
+              • 多智能体长程博弈中早期错误易被放大，且固定提示词会导致策略僵化和评估结果方差极大的问题，本文提出了一种无需更新模型权重的自我对弈框架 MEMO。<br>
+              • MEMO 巧妙地将“保留”与“探索”机制解耦并结合。它建立了一个持久化记忆库，利用 CRUD（增删改查）操作从对弈轨迹中提取结构化的策略洞察，并将其作为后续推理的先验知识注入；同时，它利用基于 TrueSkill 评分的锦标赛式提示词演化和优先经验回放机制，来高效探索策略并重访关键决策状态。<br>
+              • 在五款文本博弈测试中，MEMO 展现了突出的学习效率，仅需 2000 局自我对弈，就能将 GPT-4o-mini 的平均胜率从 25.1% 提升至 49.5%，同时使运行结果的方差大幅下降。
+          </td>
+      </tr>
+      <tr>
+        <td rowspan="2" style="width: 15%;">2026-03-12</td>
+        <td style="width: 55%;"><strong>Collaborative Multi-Agent Optimization for Personalized Memory System</strong></td>
+        <td style="width: 15%;">
+          <img src="https://img.shields.io/badge/Personalization-indigo" alt="Personalized">
+          <img src="https://img.shields.io/badge/Multi--Agent-orange" alt="Multi-Agent">
+          <img src="https://img.shields.io/badge/RL-blueviolet" alt="RL">
+        </td>
+        <td style="width: 15%;"><a href="https://arxiv.org/pdf/2603.12631">
+          <img src="https://img.shields.io/badge/arXiv-Paper-%23D2691E?logo=arxiv" alt="Paper Badge">
+        </a></td>
+      </tr>
+      <tr>
+          <td colspan="3">
+              • 现有的个性化大模型记忆系统通常由多个智能体组成，但过去的方法大多对它们进行独立的局部优化，忽视了跨智能体的协作，导致局部最优无法保证全局系统问答性能的最佳。<br>
+              • 在为了解决异构智能体异步执行带来的优化难题，文章提出了 CoMAM 框架，将细粒度提取、粗粒度画像和记忆检索等智能体的执行流程建模为顺序的马尔可夫决策过程。<br>
+              • 为了将局部的任务改进与全局系统性能对齐，CoMAM 通过计算每个智能体的局部奖励与全局系统奖励之间的组级排序一致性来量化其贡献。
+          </td>
+      </tr>
+      <tr>
+        <td rowspan="2" style="width: 15%;">2026-03-13</td>
+        <td style="width: 55%;"><strong>Structured Distillation for Personalized Agent Memory:11× Token Reduction with Retrieval Preservation</strong></td>
+        <td style="width: 15%;">
+          <img src="https://img.shields.io/badge/Personalization-indigo" alt="Personalized">
+          <img src="https://img.shields.io/badge/Retrieval-orange" alt="Retrieval">
+        </td>
+        <td style="width: 15%;"><a href="https://arxiv.org/pdf/2603.13017">
+          <img src="https://img.shields.io/badge/arXiv-Paper-%23D2691E?logo=arxiv" alt="Paper Badge">
+        </a></td>
+      </tr>
+      <tr>
+          <td colspan="3">
+              • 提出将每次对话交互提取为结构化的复合对象，包含：核心内容、特定上下文、主题分类和涉及文件。这种方法遵循“保留核心词汇”原则，不随意改写专业术语，成功将每次交互的平均Token数从371压缩至38，实现了11倍的高效压缩。<br>
+              • 在包含107种检索配置的测试中发现，最佳的纯蒸馏文本配置能够保留原始逐字文本96%向量搜索在11倍压缩下几乎没有出现显著的性能衰减。<br>
+              • agent在上下文中仅携带压缩后的蒸馏文本作为“路由索引”进行高效检索，而原始的完整对话文本保存在本地，仅在用户需要深入查看时才调出显示。
+          </td>
+      </tr>
+      <tr>
+        <td rowspan="2" style="width: 15%;">2026-03-09</td>
+        <td style="width: 55%;"><strong>TA-Mem: Tool-Augmented Autonomous Memory Retrieval for LLM in Long-Term Conversational QA</strong></td>
+        <td style="width: 15%;">
+          <img src="https://img.shields.io/badge/Tool%20Use-orange" alt="Tool Use">
+          <img src="https://img.shields.io/badge/Retrieval-orange" alt="Retrieval">
+        </td>
+        <td style="width: 15%;"><a href="https://arxiv.org/pdf/2603.09297">
+          <img src="https://img.shields.io/badge/arXiv-Paper-%23D2691E?logo=arxiv" alt="Paper Badge">
+        </a></td>
+      </tr>
+      <tr>
+          <td colspan="3">
+              • 结构化的自适应记忆抽取：设计了一个记忆抽取智能体，能够通过单次交互根据语义相关性自适应地切分长上下文，并提取为包含摘要、关键词、事件等丰富信息的结构化记忆笔记。<br>
+              • 工具驱动的自主记忆探索：构建了支持字符串键值匹配与向量相似度查询的多索引数据库。检索智能体可自主选择查询工具，在记忆空间中进行多轮迭代探索。<br>
+              • 长程推理能力与Token效率双提升：通过灵活精准的工具调用及缓存机制过滤冗余上下文，该框架在复杂长程问题上显著超越基线，同时保持了较低的Token消耗。
+          </td>
+      </tr>
+      <tr>
+        <td rowspan="2" style="width: 15%;">2026-03-09</td>
+        <td style="width: 55%;"><strong>EVOKING USER MEMORY: PERSONALIZING LLM VIA RECOLLECTION-FAMILIARITY ADAPTIVE RETRIEVAL</strong></td>
+        <td style="width: 15%;">
+          <img src="https://img.shields.io/badge/Personalization-indigo" alt="Personalized">
+          <img src="https://img.shields.io/badge/Adaptive-orange" alt="Adaptive">
+          <img src="https://img.shields.io/badge/Retrieval-orange" alt="Retrieval">
+        </td>
+        <td style="width: 15%;"><a href="https://arxiv.org/pdf/2603.09250">
+          <img src="https://img.shields.io/badge/arXiv-Paper-%23D2691E?logo=arxiv" alt="Paper Badge">
+        </a></td>
+      </tr>
+      <tr>
+          <td colspan="3">
+              • 指出当前个性化大模型的记忆检索要么将历史记录全量输入导致上下文过载，要么仅依赖单次相似度检索而导致理解过浅。为此，研究团队借鉴人类记忆的“回想-熟悉度双过程理论”，提出了一种名为 RF-Mem 的自适应记忆检索框架。<br>
+              • RF-Mem 会通过探测检索的平均相似度得分和熵值来衡量“熟悉度”。当熟悉度高且不确定性低时，系统采用快速的“熟悉度路径”，直接返回单次 top-K 结果；当熟悉度低且不确定性高时，则激活深度的“回想路径”。<br>
+              • 在触发“回想路径”时，系统会对候选记忆进行聚类，并使用 α-mix 策略将聚类质心与原始查询进行混合更新。
+          </td>
+      </tr>
+      <tr>
+        <td rowspan="2" style="width: 15%;">2026-03-10</td>
+        <td style="width: 55%;"><strong>A Control-Theoretic Foundation for Agentic Systems</strong></td>
+        <td style="width: 15%;">
+          <img src="https://img.shields.io/badge/Control--Theory-blue" alt="Control-Theory">
+          <img src="https://img.shields.io/badge/Agentic--orange" alt="Agentic-Systems">
+          <img src="https://img.shields.io/badge/feedback--pink" alt="feedback Control">
+        </td>
+        <td style="width: 15%;"><a href="https://arxiv.org/pdf/2603.10779">
+          <img src="https://img.shields.io/badge/arXiv-Paper-%23D2691E?logo=arxiv" alt="Paper Badge">
+        </a></td>
+      </tr>
+      <tr>
+          <td colspan="3">
+              • 提出了一种控制论框架，将AI智能体系统嵌入到反馈控制环中进行分析。该框架没有将AI的记忆、学习、工具调用、交互信号和目标表述视为孤立的零散功能，而是将它们统一整合到了一个单一的闭环动态架构中。<br>
+              • 通过AI对控制架构所掌握的“决策权限”大小，创造性地定义了一个五级智能体层级结构。<br>
+              • 将该框架应用于非线性和线性系统，文章指出随着智能体层级的提升，系统不可避免地会引入更多复杂的动态机制。
+          </td>
+      </tr>
+      <tr>
+        <td rowspan="2" style="width: 15%;">2026-03-11</td>
+        <td style="width: 55%;"><strong>When OpenClaw Meets Hospital: Toward an Agentic Operating System for Dynamic Clinical Workflows</strong></td>
+        <td style="width: 15%;">
+          <img src="https://img.shields.io/badge/Multi--Agent-orange" alt="Multi-Agent">
+          <img src="https://img.shields.io/badge/openclaw--red" alt="openclaw">
+          <img src="https://img.shields.io/badge/healthcare--green" alt="openclaw">
+        </td>
+        <td style="width: 15%;"><a href="https://arxiv.org/pdf/2603.11721">
+          <img src="https://img.shields.io/badge/arXiv-Paper-%23D2691E?logo=arxiv" alt="Paper Badge">
+        </a></td>
+      </tr>
+      <tr>
+          <td colspan="3">
+              • 将智能体限制在隔离环境中，仅允许读写特定文件和调用预审的“医疗技能库”，从操作系统底层切断任意代码执行与网络访问，确保数据安全与合规。<br>
+              • 摒弃传统的向量检索，将临床文档组织为带清单的树状结构。智能体依靠自然语言理解能力阅读清单，进行“渐进式披露”导航，从而精准、可解释地获取长期的病历上下文。<br>
+              • 多智能体间不直接对话，而是通过“仅追加”写入共享临床文档及事件订阅来实现隐式协同。这使得智能体能进行临场任务编排，灵活应对传统系统无法处理的复杂、长尾临床需求。
+          </td>
+      </tr>
+      <tr>
+        <td rowspan="2" style="width: 15%;">2026-03-10</td>
+        <td style="width: 55%;"><strong>Trajectory-Informed Memory Generation for Self-Improving Agent Systems</strong></td>
+        <td style="width: 15%;">
+          <img src="https://img.shields.io/badge/Trajectory%20Memory-orange" alt="Trajectory Memory Generation">
+          <img src="https://img.shields.io/badge/Self--Improving-brightgreen" alt="Self-Improving">
+        </td>
+        <td style="width: 15%;"><a href="https://arxiv.org/pdf/2603.10600">
+          <img src="https://img.shields.io/badge/arXiv-Paper-%23D2691E?logo=arxiv" alt="Paper Badge">
+        </a></td>
+      </tr>
+      <tr>
+          <td colspan="3">
+              • 解决智能体的“失忆”问题，系统性地从其历史执行轨迹（包括完美成功、低效成功、失败及错误恢复）中自动提取可复用的实战经验。<br>
+              • 提出一个完整的学习闭环，包含轨迹特征提取、决策归因分析、情境提示生成，以及上下文自适应检索。<br>
+              • 在AppWorld基准测试中全面提升了智能体的任务表现，尤其在需要复杂规划的长序列任务上效果显著。
+          </td>
+      </tr>
+      <tr>
+        <td rowspan="2" style="width: 15%;">2026-03-09</td>
+        <td style="width: 55%;"><strong>AutoAgent: Evolving Cognition and Elastic Memory Orchestration for Adaptive Agents</strong></td>
+        <td style="width: 15%;">
+          <img src="https://img.shields.io/badge/Adaptive-orange" alt="Adaptive">
+          <img src="https://img.shields.io/badge/Architecture-brightgreen" alt="Cognitive Evolution">
+        </td>
+        <td style="width: 15%;"><a href="https://arxiv.org/pdf/2603.09716v1">
+          <img src="https://img.shields.io/badge/arXiv-Paper-%23D2691E?logo=arxiv" alt="Paper Badge">
+        </a></td>
+      </tr>
+      <tr>
+          <td colspan="3">
+              • 将智能体的认知结构化为“内部认知”和“外部认知”。这种认知作为智能体可更新的状态，会根据任务交互的实际结果不断进行自我修正和演进，从而为决策提供更准确、更少偏差的知识基础。<br>
+              • 采用“选择-执行-更新”的动态循环进行问题求解。它将动作空间统一划分为“内部行动”和“外部行动”，使智能体能够完全根据当前上下文和实时认知来进行自适应的下一步规划。<br>
+              • 为了解决长序列推理带来的上下文冗余与 Token 消耗问题，系统设计了弹性记忆编排器（EMO），用于动态压缩历史轨迹、过滤冗余信息并提取可复用的片段记忆。
+          </td>
+      </tr>
+      <tr>
+        <td rowspan="2" style="width: 15%;">2026-03-09</td>
+        <td style="width: 55%;"><strong>Multi-Agent Memory from a Computer Architecture Perspective: Visions and Challenges Ahead</strong></td>
+        <td style="width: 15%;">
+          <img src="https://img.shields.io/badge/Multi--Agent-orange" alt="Multi-Agent">
+          <img src="https://img.shields.io/badge/Architecture-brightgreen" alt="Architecture">
+        </td>
+        <td style="width: 15%;"><a href="https://arxiv.org/pdf/2603.10062">
+          <img src="https://img.shields.io/badge/arXiv-Paper-%23D2691E?logo=arxiv" alt="Paper Badge">
+        </a></td>
+      </tr>
+      <tr>
+          <td colspan="3">
+              • 将多智能体记忆系统类比为经典的计算机系统，区分了共享记忆和分布式记忆两种基本架构原型。<br>
+              • 提出了一种包含I/O层、缓存层和内存层缓存共享协议，以及用于规范读写权限与粒度的记忆访问控制协议。<br>
+              • 未来构建多智能体系统最紧迫的挑战是解决记忆的一致性问题。这要求系统在多个智能体并发读写共享记忆时，能够妥善处理读取时的冲突、更新操作的可见性与顺序，并建立明确的版本控制与冲突解决规则，以保持全局上下文的连贯性。
+          </td>
+      </tr>
+      <tr>
           <td rowspan="2" style="width: 15%;">2026-03-04</td>
           <td style="width: 55%;"><strong>Adaptive Memory Admission Control for LLM Agents</strong></td>
           <td style="width: 15%;">

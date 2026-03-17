@@ -518,7 +518,266 @@ Papers below are ordered by **publication date**:
       <td><strong>Tags</strong></td>
       <td><strong>Links</strong></td>
     </tr>
-          <tr>
+      <tr>
+        <td rowspan="2" style="width: 15%;">2026-03-11</td>
+        <td style="width: 55%;"><strong>Governing Evolving Memory in LLM Agents: Risks, Mechanisms, and the Stability and Safety Governed Memory (SSGM) Framework</strong></td>
+        <td style="width: 15%;">
+          <img src="https://img.shields.io/badge/safety-red" alt="safety">
+          <img src="https://img.shields.io/badge/Evolution-brightgreen" alt="Evolution">
+        </td>
+        <td style="width: 15%;"><a href="https://arxiv.org/pdf/2603.11768v1">
+          <img src="https://img.shields.io/badge/arXiv-Paper-%23D2691E?logo=arxiv" alt="Paper Badge">
+        </a></td>
+      </tr>
+      <tr>
+          <td colspan="3">
+              • The memory systems of large-model agents are shifting from static retrieval to dynamic autonomous updating, which enhances agent adaptability but also raises serious stability and security concerns. These include semantic drift, program drift that solidifies erroneous workflows, and memory poisoning caused by malicious external injections.<br>
+              • It proposes the Stable and Secure Governance Memory (SSGM) framework. The core design principle of this framework is to completely decouple an agent’s “generative cognitive strategies” from the underlying memory storage medium. Between the two, it introduces an actively intercepting governance middleware, so that memory updates are no longer blindly written directly, but must instead pass through multiple gateway checks.<br>
+              • Pre-merge validation performs logical consistency checks before writes, rejecting updates that contradict core facts to prevent hallucinations from being solidified. Temporal and permission filtering combines decay functions at read time to filter out outdated or invalid data and uses access control to prevent cross-user privacy leakage. Reversible periodic alignment adopts a dual-track storage structure of “mutable activity graph + immutable situational log,” whereby the system regularly aligns current memory with the immutable log and rolls back errors, thereby imposing a strict mathematical upper bound on long-term semantic drift.
+          </td>
+      </tr>
+      <tr>
+        <td rowspan="2" style="width: 15%;">2026-03-11</td>
+        <td style="width: 55%;"><strong>Taming OpenClaw: Security Analysis and Mitigation of Autonomous LLM Agent Threats</strong></td>
+        <td style="width: 15%;">
+          <img src="https://img.shields.io/badge/safety-orange" alt="safety">
+          <img src="https://img.shields.io/badge/Openclaw-red" alt="openclaw">
+        </td>
+        <td style="width: 15%;"><a href="https://arxiv.org/pdf/2603.11619v1">
+          <img src="https://img.shields.io/badge/arXiv-Paper-%23D2691E?logo=arxiv" alt="Paper Badge">
+        </a></td>
+      </tr>
+      <tr>
+          <td colspan="3">
+              • The paper systematically analyzes the security threats faced by autonomous large language model agents such as OpenClaw across five lifecycle stages: initialization, input, reasoning, decision-making, and execution.<br>
+              • A detailed case study on OpenClaw demonstrates the destructiveness of these threats. For example, an attacker can turn transient malicious inputs into long-term behavioral control through “memory poisoning”; and during the decision-making and execution stages, ambiguous instructions may trigger “intent drift,” causing the agent to escalate a simple safety-check task into destructive firewall modifications and high-risk command execution.<br>
+              • Mitigation strategies include: plugin verification and signing in the initialization phase; semantic firewall isolation in the input phase; dynamic memory integrity checks and state rollback in the reasoning phase; intent consistency verification in the decision-making phase; and kernel-level sandboxing and least-privilege control in the execution phase.
+          </td>
+      </tr>
+            <tr>
+        <td rowspan="2" style="width: 15%;">2026-03-12</td>
+        <td style="width: 55%;"><strong>ReMem-VLA: Empowering Vision-Language-Action Model with Memory via Dual-Level Recurrent Queries</strong></td>
+        <td style="width: 15%;">
+          <img src="https://img.shields.io/badge/Dual--Level--Recurrent--Memory-indigo" alt="Dual-Level Recurrent Memory">
+          <img src="https://img.shields.io/badge/Past--Prediction-indigo" alt="Past Observation Prediction">
+          <img src="https://img.shields.io/badge/Multi-Modal-yellow" alt="Multi-Modal">
+        </td>
+        <td style="width: 15%;"><a href="https://arxiv.org/pdf/2603.12942">
+          <img src="https://img.shields.io/badge/arXiv-Paper-%23D2691E?logo=arxiv" alt="Paper Badge">
+        </a></td>
+      </tr>
+      <tr>
+          <td colspan="3">
+              • ReMem-VLA introduces two sets of learnable recurrent memory queries: frame-level queries, which are updated frame by frame to capture short-term memory, and chunk-level queries, which are updated over longer temporal spans to stably maintain long-term memory.<br>
+              • A visual prediction head is added, introducing past observation prediction as an auxiliary training objective, which forces the model to recall visual details by reconstructing historical RGB frames. To address the batching challenge of recurrent training on variable-length sequences, a slot-based streaming training paradigm is proposed, which preserves temporal continuity while preventing state leakage across episodes.<br>
+              • To overcome the bottleneck of traditional truncated backpropagation through time on long-sequence optimization, the model creatively adopts a gradient-free recurrent update path that combines a frozen VLM with a fixed exponential moving average, allowing the queries to focus solely on learning “what task-relevant information to extract” rather than “how to propagate it.”
+          </td>
+      </tr>
+      <tr>
+        <td rowspan="2" style="width: 15%;">2026-03-11</td>
+        <td style="width: 55%;"><strong>Think While Watching: Online Streaming Segment-Level Memory for Multi-Turn Video Reasoning in Multimodal Large Language Models</strong></td>
+        <td style="width: 15%;">
+          <img src="https://img.shields.io/badge/Segment--Level--Memory-indigo" alt="Segment-Level-Memory">
+          <img src="https://img.shields.io/badge/Multi--turn-indigo" alt="Multi-turn">
+          <img src="https://img.shields.io/badge/Multi--Modal-yellow" alt="Multi-Modal">
+        </td>
+        <td style="width: 15%;"><a href="https://arxiv.org/pdf/2603.11896">
+          <img src="https://img.shields.io/badge/arXiv-Paper-%23D2691E?logo=arxiv" alt="Paper Badge">
+        </a></td>
+      </tr>
+      <tr>
+          <td colspan="3">
+              • Existing streaming multimodal large models typically adopt a serial “perception–generation alternation” paradigm, where text decoding blocks the continuous intake of video, and as long videos progress, the model is prone to forgetting key information from earlier segments. To address this, this paper proposes a novel streaming inference framework that “thinks while watching.”<br>
+              • The framework divides a video into multiple segments and, during system operation, dynamically generates and maintains persistent segment-level memory notes online, which support multi-turn question answering via implicit retrieval.<br>
+              • Constructs a dedicated three-stage streaming chain-of-thought (CoT) dataset—covering single-turn adaptation, multi-turn interaction, and long-range capability training—and pairs it with segment-level streaming causal masks to ensure strict temporal causality.
+          </td>
+      </tr>
+      <tr>
+        <td rowspan="2" style="width: 15%;">2026-03-09</td>
+        <td style="width: 55%;"><strong>MEMO: Memory-Augmented Model Context Optimization for Robust Multi-Turn Multi-Agent LLM Games</strong></td>
+        <td style="width: 15%;">
+          <img src="https://img.shields.io/badge/Multi--turn-indigo" alt="Multi-turn">
+          <img src="https://img.shields.io/badge/Multi--Agent-orange" alt="Multi-Agent">
+          <img src="https://img.shields.io/badge/Context%20Mgmt-blue" alt="Context-Optimization">
+        </td>
+        <td style="width: 15%;"><a href="https://arxiv.org/pdf/2603.09022">
+          <img src="https://img.shields.io/badge/arXiv-Paper-%23D2691E?logo=arxiv" alt="Paper Badge">
+        </a></td>
+      </tr>
+      <tr>
+          <td colspan="3">
+              • In long-horizon multi-agent games, early mistakes are easily amplified, and fixed prompts can lead to rigid strategies and highly variable evaluation results. To address this, this paper proposes MEMO, a self-play framework that requires no updates to model weights.<br>
+              • MEMO cleverly decouples and combines the mechanisms of “retention” and “exploration.” It builds a persistent memory bank that uses CRUD (create, read, update, delete) operations to extract structured strategic insights from self-play trajectories and injects them as prior knowledge for subsequent reasoning; meanwhile, it employs tournament-style prompt evolution based on TrueSkill ratings and a prioritized experience replay mechanism to efficiently explore strategies and revisit critical decision states.<br>
+              • In five text-based game benchmarks, MEMO demonstrates remarkable learning efficiency: with just 2,000 self-play episodes, it boosts GPT-4o-mini’s average win rate from 25.1% to 49.5%, while simultaneously causing a substantial reduction in the variance of its performance.
+          </td>
+      </tr>
+      <tr>
+        <td rowspan="2" style="width: 15%;">2026-03-12</td>
+        <td style="width: 55%;"><strong>Collaborative Multi-Agent Optimization for Personalized Memory System</strong></td>
+        <td style="width: 15%;">
+          <img src="https://img.shields.io/badge/Personalization-indigo" alt="Personalized">
+          <img src="https://img.shields.io/badge/Multi--Agent-orange" alt="Multi-Agent">
+          <img src="https://img.shields.io/badge/RL-blueviolet" alt="RL">
+        </td>
+        <td style="width: 15%;"><a href="https://arxiv.org/pdf/2603.12631">
+          <img src="https://img.shields.io/badge/arXiv-Paper-%23D2691E?logo=arxiv" alt="Paper Badge">
+        </a></td>
+      </tr>
+      <tr>
+          <td colspan="3">
+              • Existing personalized large-model memory systems are typically composed of multiple agents, but most prior methods optimize them independently and locally, neglecting cross-agent collaboration, which means that locally optimal performance cannot guarantee the best global question-answering performance of the overall system.<br>
+              • To address the optimization challenges caused by asynchronous execution of heterogeneous agents, the paper proposes the CoMAM framework, which models the execution pipelines of agents—such as fine-grained extraction, coarse-grained profiling, and memory retrieval—as a sequential Markov decision process.<br>
+              • To align local task improvements with global system performance, CoMAM quantifies each agent’s contribution by computing the group-level ranking consistency between its local rewards and the global system reward.
+          </td>
+      </tr>
+      <tr>
+        <td rowspan="2" style="width: 15%;">2026-03-13</td>
+        <td style="width: 55%;"><strong>Structured Distillation for Personalized Agent Memory: 11× Token Reduction with Retrieval Preservation</strong></td>
+        <td style="width: 15%;">
+          <img src="https://img.shields.io/badge/Personalization-indigo" alt="Personalized">
+          <img src="https://img.shields.io/badge/Retrieval-orange" alt="Retrieval">
+        </td>
+        <td style="width: 15%;"><a href="https://arxiv.org/pdf/2603.13017">
+          <img src="https://img.shields.io/badge/arXiv-Paper-%23D2691E?logo=arxiv" alt="Paper Badge">
+        </a></td>
+      </tr>
+      <tr>
+          <td colspan="3">
+              • It proposes extracting each conversational interaction into a structured composite object that includes core content, specific context, topic classification, and related files. This approach follows a “surviving vocabulary” principle, avoiding arbitrary rewriting of technical terms, and successfully compresses the average number of tokens per interaction from 371 to 38, achieving an 11× compression efficiency.<br>
+              • In experiments covering 107 retrieval configurations, it was found that the best pure distilled-text setup can retain 96% of the retrieval quality (MRR) of the original verbatim text. Furthermore, retrieval performance is highly mechanism-dependent: vector search shows virtually no noticeable degradation even under 11× compression, whereas keyword search (BM25) degrades significantly.<br>
+              • The agent carries only the compressed distilled text within the context as a “routing index” for efficient retrieval, while the original full conversation text is stored locally and is only brought up for display when the user needs to inspect it in detail.
+          </td>
+      </tr>
+      <tr>
+        <td rowspan="2" style="width: 15%;">2026-03-09</td>
+        <td style="width: 55%;"><strong>TA-Mem: Tool-Augmented Autonomous Memory Retrieval for LLM in Long-Term Conversational QA</strong></td>
+        <td style="width: 15%;">
+          <img src="https://img.shields.io/badge/Tool%20Use-orange" alt="Tool Use">
+          <img src="https://img.shields.io/badge/Retrieval-orange" alt="Retrieval">
+        </td>
+        <td style="width: 15%;"><a href="https://arxiv.org/pdf/2603.09297">
+          <img src="https://img.shields.io/badge/arXiv-Paper-%23D2691E?logo=arxiv" alt="Paper Badge">
+        </a></td>
+      </tr>
+      <tr>
+          <td colspan="3">
+              • Structured episodic memory extraction: TA-Mem introduces an episodic memory extraction agent that uses one-shot prompting to adaptively chunk long contexts based on semantic topic shifts, extracting them into structured memory notes containing summaries, keywords, entities, and events.<br>
+              • Tool-driven autonomous memory exploration: It constructs a multi-indexed memory database supporting diverse query methods (e.g., string matching and vector similarity). A tool-augmented retrieval agent can autonomously select appropriate tools and run iterative agentic loops to explore the memory space.<br>
+              • Enhanced reasoning and token efficiency: By leveraging precise tool calls and a per-session memory caching mechanism to filter out redundant context, the framework significantly outperforms existing baselines on complex long-range inference tasks (such as the LoCoMo benchmark) while maintaining high token efficiency.
+          </td>
+      </tr>
+      <tr>
+        <td rowspan="2" style="width: 15%;">2026-03-09</td>
+        <td style="width: 55%;"><strong>EVOKING USER MEMORY: PERSONALIZING LLM VIA RECOLLECTION-FAMILIARITY ADAPTIVE RETRIEVAL</strong></td>
+        <td style="width: 15%;">
+          <img src="https://img.shields.io/badge/Personalization-indigo" alt="Personalized">
+          <img src="https://img.shields.io/badge/Adaptive-orange" alt="Adaptive">
+          <img src="https://img.shields.io/badge/Retrieval-orange" alt="Retrieval">
+        </td>
+        <td style="width: 15%;"><a href="https://arxiv.org/pdf/2603.09250">
+          <img src="https://img.shields.io/badge/arXiv-Paper-%23D2691E?logo=arxiv" alt="Paper Badge">
+        </a></td>
+      </tr>
+      <tr>
+          <td colspan="3">
+              • It points out that current memory retrieval in personalized large models either feeds in the entire history, causing context overload, or relies only on a single similarity search, leading to shallow understanding. To address this, the research team draws inspiration from the dual-process theory of human memory (“recollection–familiarity”) and proposes an adaptive memory retrieval framework called RF-Mem.<br>
+              • RF-Mem measures “familiarity” by probing the average similarity scores and entropy of the retrieval. When familiarity is high and uncertainty is low, the system takes a fast “familiarity route,” directly returning the single top-K result; when familiarity is low and uncertainty is high, it instead activates a deeper “recollection route.”<br>
+              • When the “recollection route” is triggered, the system clusters the candidate memories and uses an α-mix strategy to update the original query by blending it with the cluster centroids.
+          </td>
+      </tr>
+      <tr>
+        <td rowspan="2" style="width: 15%;">2026-03-10</td>
+        <td style="width: 55%;"><strong>A Control-Theoretic Foundation for Agentic Systems</strong></td>
+        <td style="width: 15%;">
+          <img src="https://img.shields.io/badge/Control--Theory-blue" alt="Control-Theory">
+          <img src="https://img.shields.io/badge/Agentic%20Systems-orange" alt="Agentic Systems">
+          <img src="https://img.shields.io/badge/Feedback%20Control-pink" alt="Feedback Control">
+        </td>
+        <td style="width: 15%;"><a href="https://arxiv.org/pdf/2603.10779">
+          <img src="https://img.shields.io/badge/arXiv-Paper-%23D2691E?logo=arxiv" alt="Paper Badge">
+        </a></td>
+      </tr>
+      <tr>
+          <td colspan="3">
+              • It proposes a control-theoretic framework that embeds AI agent systems into a feedback control loop for analysis. Rather than treating AI memory, learning, tool invocation, interaction signals, and goal specification as isolated, fragmented functions, this framework unifies and integrates them into a single closed-loop dynamical architecture.<br>
+              • It creatively defines a five-level hierarchy of agents based on the extent of “decision authority” that AI holds within the control architecture.<br>
+              • Applying this framework to both nonlinear and linear systems, the paper points out that as the agent hierarchy increases, the system will inevitably introduce more complex dynamical mechanisms, such as time-varying adaptation, endogenous switching, decision-induced delays, and structural reconfiguration of the control pipeline.
+          </td>
+      </tr>
+      <tr>
+        <td rowspan="2" style="width: 15%;">2026-03-11</td>
+        <td style="width: 55%;"><strong>When OpenClaw Meets Hospital: Toward an Agentic Operating System for Dynamic Clinical Workflows</strong></td>
+        <td style="width: 15%;">
+          <img src="https://img.shields.io/badge/Multi--Agent-orange" alt="Multi-Agent">
+          <img src="https://img.shields.io/badge/openclaw--red" alt="openclaw">
+          <img src="https://img.shields.io/badge/healthcare--green" alt="healthcare">
+        </td>
+        <td style="width: 15%;"><a href="https://arxiv.org/pdf/2603.11721">
+          <img src="https://img.shields.io/badge/arXiv-Paper-%23D2691E?logo=arxiv" alt="Paper Badge">
+        </a></td>
+      </tr>
+      <tr>
+          <td colspan="3">
+              • Constrain the agents to an isolated environment where they are only allowed to read and write specific files and invoke a pre-vetted “medical skill library,” cutting off arbitrary code execution and network access at the operating-system level to ensure data security and compliance.<br>
+              • Instead of traditional vector retrieval, clinical documents are organized into a tree structure augmented with manifests. Relying on natural language understanding to read these manifests, the agents perform “progressive disclosure” navigation, thereby acquiring long-term medical record context in a precise and interpretable manner.<br>
+              • Instead of communicating directly, multiple agents collaborate implicitly by append-only writes to shared clinical documents and event subscriptions. This allows the agents to perform on-the-fly task orchestration and flexibly handle complex, long-tail clinical needs that traditional systems cannot address.
+          </td>
+      </tr>
+      <tr>
+        <td rowspan="2" style="width: 15%;">2026-03-10</td>
+        <td style="width: 55%;"><strong>Trajectory-Informed Memory Generation for Self-Improving Agent Systems</strong></td>
+        <td style="width: 15%;">
+          <img src="https://img.shields.io/badge/Trajectory%20Memory-orange" alt="Trajectory Memory Generation">
+          <img src="https://img.shields.io/badge/Self--Improving-brightgreen" alt="Self-Improving">
+        </td>
+        <td style="width: 15%;"><a href="https://arxiv.org/pdf/2603.10600">
+          <img src="https://img.shields.io/badge/arXiv-Paper-%23D2691E?logo=arxiv" alt="Paper Badge">
+        </a></td>
+      </tr>
+      <tr>
+          <td colspan="3">
+              • To address the agents’ “amnesia” problem, it systematically and automatically extracts reusable practical experience from their historical execution traces, including clean successes, inefficient successes, failures, and error recoveries.<br>
+              • It proposes a complete learning feedback loop that includes trajectory intelligence extraction, decision attribution analysis, contextual learning generation, and adaptive memory retrieval.<br>
+              • It achieves comprehensive improvements in agent task performance on the AppWorld benchmark, with particularly pronounced gains on long-horizon tasks that require complex planning.
+          </td>
+      </tr>
+      <tr>
+        <td rowspan="2" style="width: 15%;">2026-03-09</td>
+        <td style="width: 55%;"><strong>AutoAgent: Evolving Cognition and Elastic Memory Orchestration for Adaptive Agents</strong></td>
+        <td style="width: 15%;">
+          <img src="https://img.shields.io/badge/Adaptive-orange" alt="Adaptive">
+          <img src="https://img.shields.io/badge/Cognitive%20Evolution-brightgreen" alt="Cognitive Evolution">
+        </td>
+        <td style="width: 15%;"><a href="https://arxiv.org/pdf/2603.09716v1">
+          <img src="https://img.shields.io/badge/arXiv-Paper-%23D2691E?logo=arxiv" alt="Paper Badge">
+        </a></td>
+      </tr>
+      <tr>
+          <td colspan="3">
+              • It structures the agent’s cognition into “internal cognition” and “external cognition.” This cognition, treated as an updatable state of the agent, is continuously self-corrected and evolved based on the actual outcomes of task interactions, thereby providing a more accurate and less biased knowledge foundation for decision-making.<br>
+              • It adopts a dynamic “select–execute–update” loop for problem solving. The action space is uniformly divided into “emic actions” (self-driven) and “etic actions” (collaborative), enabling the agent to adaptively plan its next step entirely based on the current context and real-time cognition.<br>
+              • To tackle context redundancy and token consumption in long-sequence reasoning, the system designs an Elastic Memory Orchestrator (EMO) that dynamically compresses historical trajectories, filters redundant information, and extracts reusable episodic memories.
+          </td>
+      </tr>
+           <tr>
+        <td rowspan="2" style="width: 15%;">2026-03-09</td>
+        <td style="width: 55%;"><strong>Multi-Agent Memory from a Computer Architecture Perspective: Visions and Challenges Ahead</strong></td>
+        <td style="width: 15%;">
+          <img src="https://img.shields.io/badge/Multi--Agent-orange" alt="Multi-Agent">
+          <img src="https://img.shields.io/badge/Architecture-brightgreen" alt="Architecture">
+        </td>
+        <td style="width: 15%;"><a href="https://arxiv.org/pdf/2603.10062">
+          <img src="https://img.shields.io/badge/arXiv-Paper-%23D2691E?logo=arxiv" alt="Paper Badge">
+        </a></td>
+      </tr>
+      <tr>
+          <td colspan="3">
+              • It compares the multi-agent memory system to a classic computer system, distinguishing between two basic architectural prototypes: shared memory and distributed memory.<br>
+              • It proposes an architecture-inspired three-layer memory hierarchy (I/O layer, cache layer, and memory layer), and identifies two critical missing protocols: an agent cache sharing protocol, and an agent memory access protocol that regulates read/write permissions and granularity.<br>
+              • In the future, the most pressing challenge in building multi-agent systems is ensuring memory consistency. This requires the system to properly handle read-time conflicts, the visibility and ordering of update operations when multiple agents concurrently read and write shared memory, and to establish clear versioning and conflict resolution rules in order to maintain coherence of the global context.
+          </td>
+      </tr>
+      <tr>
           <td rowspan="2" style="width: 15%;">2026-03-04</td>
           <td style="width: 55%;"><strong>Adaptive Memory Admission Control for LLM Agents</strong></td>
           <td style="width: 15%;">
