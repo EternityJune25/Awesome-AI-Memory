@@ -12,7 +12,7 @@
 [![License: MIT](https://img.shields.io/badge/License-MIT-green.svg)](https://opensource.org/licenses/MIT)
 ![](https://img.shields.io/badge/PRs-Welcome-red)
 [![Papers](https://img.shields.io/badge/Papers-285-blue.svg)](https://github.com/IAAR-Shanghai/Awesome-AI-Memory/papers)
-[![Open Source Projects](https://img.shields.io/badge/Open%20Source%20Projects-86-green.svg)](https://github.com/IAAR-Shanghai/Awesome-AI-Memory/projects)
+[![Open Source Projects](https://img.shields.io/badge/Open%20Source%20Projects-87-green.svg)](https://github.com/IAAR-Shanghai/Awesome-AI-Memory/projects)
 
 
 ## 👋 简介
@@ -5724,6 +5724,7 @@ Framework for Experience-Driven Agent Evolution</strong></td>
 | Riverse | 2026-02-25 | ![GitHub Repo stars](https://img.shields.io/github/stars/wangjiake/JKRiver?style=social) | https://github.com/wangjiake/JKRiver<br>https://wangjiake.github.io/riverse-docs/ |
 | SuperLocalMemory | 2026-03-01 | ![GitHub Repo stars](https://img.shields.io/github/stars/qualixar/superlocalmemory?style=social) | https://github.com/qualixar/superlocalmemory<br>https://superlocalmemory.com/ |
 | NeverOnce | 2026-03-18 | ![GitHub Repo stars](https://img.shields.io/github/stars/WeberG619/neveronce?style=social) | https://github.com/WeberG619/neveronce<br>https://pypi.org/project/neveronce/ |
+| MHN AI Agent Memory | 2026-03-21 | ![GitHub Repo stars](https://img.shields.io/github/stars/shahzebqazi/mhn-ai-agent-memory?style=social) | https://github.com/shahzebqazi/mhn-ai-agent-memory<br>No official website |
 
 ### 🎥 多媒体资源
 
