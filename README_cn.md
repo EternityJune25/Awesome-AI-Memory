@@ -1950,6 +1950,25 @@ Memory via Dual-Level Recurrent Queries</strong></td>
         </td>
     </tr>
     <tr>
+        <td rowspan="2" style="width: 15%;">2026-01-30</td>
+        <td style="width: 55%;"><strong>Traversal-as-Policy: Log-Distilled Gated Behavior Trees as Externalized, Verifiable Policies for Safe, Robust, and Efficient Agents</strong></td>
+        <td style="width: 15%;">
+            <img src="https://img.shields.io/badge/Behavior%20Tree-blue" alt="Behavior Tree">
+            <img src="https://img.shields.io/badge/Policy%20Verifiability-teal" alt="Policy Verifiability">
+            <img src="https://img.shields.io/badge/Safety-red" alt="Safety">
+        </td>
+        <td style="width: 15%;"><a href="https://arxiv.org/pdf/2603.05517">
+            <img src="https://img.shields.io/badge/arXiv-Paper-%23D2691E?logo=arxiv" alt="Paper Badge">
+        </a></td>
+    </tr>
+    <tr>
+        <td colspan="3">
+            • 提出了 Traversal-as-Policy 范式，通过将执行日志蒸馏为结构化的门控行为树 (GBT)，在运行时以确定性的树遍历替代无约束生成，实现了 Agent 策略的外部化与可验证性。<br>
+            • 引入了 Spine Memory 结构记录遍历路径，有效解决了长程任务中的策略隐式化和安全事后化问题。<br>
+            • 实验验证该方法在软件工程、Web Agent 和安全等多个领域能同时提升成功率并显著降低违规风险与 token 消耗。
+        </td>
+    </tr>
+    <tr>
       <td rowspan="2" style="width: 15%;">2026-01-29</td>
       <td style="width: 55%;"><strong>E-mem: Multi-agent based Episodic Context Reconstruction for LLM Agent Memory</strong></td>
       <td style="width: 15%;">

@@ -1951,6 +1951,25 @@ Papers below are ordered by **publication date**:
       </td>
     </tr>
     <tr>
+        <td rowspan="2" style="width: 15%;">2026-01-30</td>
+        <td style="width: 55%;"><strong>Traversal-as-Policy: Log-Distilled Gated Behavior Trees as Externalized, Verifiable Policies for Safe, Robust, and Efficient Agents</strong></td>
+        <td style="width: 15%;">
+            <img src="https://img.shields.io/badge/Behavior%20Tree-blue" alt="Behavior Tree">
+            <img src="https://img.shields.io/badge/Policy%20Verifiability-teal" alt="Policy Verifiability">
+            <img src="https://img.shields.io/badge/Safety-red" alt="Safety">
+        </td>
+        <td style="width: 15%;"><a href="https://arxiv.org/pdf/2603.05517">
+            <img src="https://img.shields.io/badge/arXiv-Paper-%23D2691E?logo=arxiv" alt="Paper Badge">
+        </a></td>
+    </tr>
+    <tr>
+        <td colspan="3">
+            • Proposes the Traversal-as-Policy paradigm, which distills execution logs into structured Gated Behavior Trees (GBT) and replaces unconstrained generation with deterministic tree traversal at runtime, achieving externalized and verifiable Agent policies.<br>
+            • Introduces Spine Memory to record traversal paths, effectively solving the problems of implicit strategy and post-hoc safety in long-horizon tasks.<br>
+            • Experiments validate that this method can simultaneously improve success rates and significantly reduce violation risks and token consumption across software engineering, Web Agent, and safety domains.
+        </td>
+    </tr>
+    <tr>
       <td rowspan="2" style="width: 15%;">2026-01-29</td>
       <td style="width: 55%;"><strong>E-mem: Multi-agent based Episodic Context Reconstruction for LLM Agent Memory</strong></td>
       <td style="width: 15%;">
